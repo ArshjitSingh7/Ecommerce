@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/eea51bea51.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Singh's Clothing</title>
+</head>
+<body>
+    <header id="header">
+        <a class="logo-container" href="index.html"><i class="fas fa-tshirt"></i> Singh's Clothing</a>
+        <div class="options">
+            <a class="option" href="shop.html">SHOP</a>
+            <a class="option" href="contact.html">CONTACT</a>
+            <a class="option" href="sigin.html">SIGNIN</a>
+            <div class="cart-icon">
+               <img class="shopping-icon" src="img/cart/cart-icon.svg">
+                <span class="item-count">0</span>
+            </div>
+        </div>
+        <div class="cart-dropdown">
+            <div class="cart-items"></div>
+            <button class="btn-dark button" onclick="location.href='checkout.html'">Checkout</button> 
+        </div>
+    </header>
+    <div class="collection-preview">
+        <h1 class="title">SNEAKERS</h1>
+        <div class="preview preview-sneakers"></div>
+    </div>
+    <script src="data.js"></script>
+    <script src="ui.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
