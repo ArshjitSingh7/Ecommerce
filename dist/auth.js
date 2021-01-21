@@ -66,4 +66,5 @@ auth.onAuthStateChanged( user => {
     ui.displayCartItems();
     ui.displayCheckoutPage();
     ui.cartItemCount();
+    ui.cartTotal();
 })
