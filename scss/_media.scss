@@ -74,6 +74,18 @@
             }
         }
     }
+    #sign-in {
+        .box{
+            .sign-in-form {
+                .form-btn {
+                    flex-direction: column;
+                    button {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
 }
 @media screen and (max-width : 500px) {
     body {

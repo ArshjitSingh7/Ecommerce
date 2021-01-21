@@ -10,7 +10,7 @@ a {
   text-decoration: none;
   color: black; }
 
-.btn-light, .btn-grey, .btn-dark {
+.btn-light, .btn-grey, .btn-dark, .btn-google {
   min-width: 165px;
   width: auto;
   height: 50px;
@@ -44,6 +44,17 @@ a {
   .btn-dark:hover {
     background-color: white;
     color: black; }
+
+.btn-google {
+  background-color: #4885ed;
+  color: white;
+  transition: all 0.5s; }
+  .btn-google:hover {
+    background-color: white;
+    color: black; }
+
+.btn-block {
+  width: 100%; }
 
 #header {
   height: 70px;
@@ -86,6 +97,9 @@ a {
   top: 90px;
   right: 60px;
   z-index: 5; }
+  .cart-dropdown .empty-cart {
+    margin: auto;
+    margin-left: 30px; }
   .cart-dropdown .cart-items {
     height: 240px;
     display: flex;
@@ -105,7 +119,8 @@ a {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        padding: 10px 20px; }
+        padding: 10px 20px;
+        font-size: 18px; }
         .cart-dropdown .cart-items .cart-item .item-details .name {
           font-size: 16px; }
   .cart-dropdown button {
@@ -289,6 +304,37 @@ a {
     margin-left: auto;
     font-size: 36px; }
 
+#sign-in .box {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px black; }
+  #sign-in .box .box-heading {
+    text-align: center;
+    margin-bottom: 20px; }
+  #sign-in .box .sign-in-form label {
+    display: block;
+    margin-bottom: 8px; }
+  #sign-in .box .sign-in-form input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 20px; }
+  #sign-in .box .sign-in-form .form-btn {
+    display: flex;
+    justify-content: space-between; }
+  #sign-in .box .sign-in-form p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px; }
+    #sign-in .box .sign-in-form p a {
+      text-decoration: underline; }
+      #sign-in .box .sign-in-form p a:hover {
+        color: blue; }
+
 @media screen and (max-width: 900px) {
   .collection-preview .preview {
     grid-template-columns: 1fr 1fr 1fr; }
@@ -325,7 +371,11 @@ a {
   .checkout-page {
     width: 100%; }
     .checkout-page .checkout-content .checkout-item .remove-button {
-      padding-left: 0px; } }
+      padding-left: 0px; }
+  #sign-in .box .sign-in-form .form-btn {
+    flex-direction: column; }
+    #sign-in .box .sign-in-form .form-btn button {
+      margin-bottom: 10px; } }
 
 @media screen and (max-width: 500px) {
   body {

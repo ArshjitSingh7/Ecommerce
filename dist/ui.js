@@ -16,6 +16,7 @@ class UI {
         this.totalAmount = document.querySelector('.cart-total');
         this.cartItems = document.querySelector('.cart-items');
         this.cartShow = document.querySelector('.cart-dropdown');
+        this.toggleSign = document.querySelector('.toggle-sign');
         this.dropdown = true;
     }
 
@@ -216,17 +217,24 @@ class UI {
     displayCartItems() {
         const cartData = data.localStorageGetItems();
         let output = '';
-        cartData.forEach( item => {
-            output += `
-            <div class="cart-item">
-                 <img src="${item.imageUrl}" alt="pic" />
-                 <div class="item-details">
-                     <span class="name">${item.name}</span>
-                     <span class="price">${item.quantity}-$${item.price}</span>
-                 </div>
-            </div>
+        if(cartData.length === 0 ) {
+            output = `
+            <h3 class="empty-cart">Your cart is empty...</h3>
             `
-        });
+        }
+        else {
+            cartData.forEach( item => {
+                output += `
+                <div class="cart-item">
+                     <img src="${item.imageUrl}" alt="pic" />
+                     <div class="item-details">
+                         <span class="name">${item.name}</span>
+                         <span class="price">${item.quantity}-$${item.price}</span>
+                     </div>
+                </div>
+                `
+            });
+        }
         this.cartItems.innerHTML = output;
     }
     displayCheckoutPage() {
@@ -255,34 +263,41 @@ class UI {
     }
 
     addItemToCart(itemId) {
-        let item;
-        data.getShopData()
-        .then(shopData => {
-            if(itemId >=1 && itemId <=9) {
-                item = shopData.hats.items.find( shopItem => shopItem.id == itemId);
-                data.addItemInCart(item);
-            }
-            else if(itemId >=10 && itemId <=17) {
-                item = shopData.sneakers.items.find( shopItem => shopItem.id == itemId);
-                data.addItemInCart(item);
-            }
-            else if(itemId >=18 && itemId <=22) {
-                item = shopData.jackets.items.find( shopItem => shopItem.id == itemId);
-                data.addItemInCart(item);
-            }
-            else if(itemId >=23 && itemId <=31) {
-                item = shopData.womens.items.find( shopItem => shopItem.id == itemId);
-                data.addItemInCart(item);
-            }
-            else {
-                item = shopData.mens.items.find( shopItem => shopItem.id == itemId);
-                data.addItemInCart(item);
-            }
-            this.displayCartItems();
-            this.displayCheckoutPage();
-            this.cartItemCount();
-            this.cartTotal();
-        })
+        console.log(toggleSign.innerText)
+        if(toggleSign.innerText === 'SIGN IN') {
+            alert('Please Sign in to add items in cart');
+        }
+        else{
+            let item;
+            data.getShopData()
+            .then(shopData => {
+                if(itemId >=1 && itemId <=9) {
+                    item = shopData.hats.items.find( shopItem => shopItem.id == itemId);
+                    data.addItemInCart(item);
+                }
+                else if(itemId >=10 && itemId <=17) {
+                    item = shopData.sneakers.items.find( shopItem => shopItem.id == itemId);
+                    data.addItemInCart(item);
+                }
+                else if(itemId >=18 && itemId <=22) {
+                    item = shopData.jackets.items.find( shopItem => shopItem.id == itemId);
+                    data.addItemInCart(item);
+                }
+                else if(itemId >=23 && itemId <=31) {
+                    item = shopData.womens.items.find( shopItem => shopItem.id == itemId);
+                    data.addItemInCart(item);
+                }
+                else {
+                    item = shopData.mens.items.find( shopItem => shopItem.id == itemId);
+                    data.addItemInCart(item);
+                }
+                this.displayCartItems();
+                this.displayCheckoutPage();
+                this.cartItemCount();
+                this.cartTotal();
+            })
+        }
+        
     }
     increaseItemInCart(id) {
         const items = data.localStorageGetItems();
