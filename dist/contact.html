@@ -28,7 +28,7 @@
         <section id="sign-in">
         <div class="box">
             <h1 class="box-heading"><i class="fas fa-tshirt"></i>Singh's Clothing</h1>
-            <form class="sign-in-form">
+            <form class="sign-in-form" name="contact" method="POST" data-netlify="true">
                 <label>Name</label>
                 <input type="name" name="name" />
                 <label>Email</label>
@@ -38,8 +38,8 @@
                 <label>Contact</label>
                 <input type="number" name="contact" />
                 <label>Message</label>
-                <textarea class="message"></textarea>
-                <button class="btn-dark btn-block">Submit</button>
+                <textarea class="message" name="message"></textarea>
+                <button class="btn-dark btn-block" type="submit">Submit</button>
 
             </form>
         </div>
