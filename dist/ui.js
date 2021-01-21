@@ -215,8 +215,15 @@ class UI {
         }
     }
     displayCartItems() {
-        const cartData = data.localStorageGetItems();
         let output = '';
+        if(toggleSign.innerText === 'SIGN IN') {
+            output = `
+            <h3 class="empty-cart">Your cart is empty...</h3>
+            `
+        }
+        else {
+            const cartData = data.localStorageGetItems();
+        
         if(cartData.length === 0 ) {
             output = `
             <h3 class="empty-cart">Your cart is empty...</h3>
@@ -235,37 +242,44 @@ class UI {
                 `
             });
         }
+        }
+        
         this.cartItems.innerHTML = output;
     }
     displayCheckoutPage() {
-        const cartData = data.localStorageGetItems();
         let output = '' ;
-        cartData.forEach( item => {
-            output += `
-            <div class="checkout-item">
-                 <div class="image-container">
-                    <img src="${item.imageUrl}" alt="pic" />
-                 </div> 
-                 <span class="name">${item.name}</span>
-                 <span class="quantity">
-                    <div class="arrow decrease" onclick={decArrow(${item.id})}>&#10094;</div>
-                    <span class="value">${item.quantity}</span>
-                    <div class="arrow increase" onclick={incArrow(${item.id})}>&#10095;</div>
-                 </span>
-                 <span class="price">$${item.price}</span>
-                 <div class="remove-button" onclick={removeButton(${item.id})}>&#10005;</div>
-            </div>
-            
-            `
-        })
+        if(toggleSign.innerText === 'SIGN IN') {
+           
+        }
+        else {
+            const cartData = data.localStorageGetItems();
+            cartData.forEach( item => {
+                output += `
+                <div class="checkout-item">
+                    <div class="image-container">
+                        <img src="${item.imageUrl}" alt="pic" />
+                    </div> 
+                    <span class="name">${item.name}</span>
+                    <span class="quantity">
+                        <div class="arrow decrease" onclick={decArrow(${item.id})}>&#10094;</div>
+                        <span class="value">${item.quantity}</span>
+                        <div class="arrow increase" onclick={incArrow(${item.id})}>&#10095;</div>
+                    </span>
+                    <span class="price">$${item.price}</span>
+                    <div class="remove-button" onclick={removeButton(${item.id})}>&#10005;</div>
+                </div>
+                
+                `
+            })
+            }
+        
         if(this.checkoutContent)
         this.checkoutContent.innerHTML = output;
     }
 
     addItemToCart(itemId) {
-        console.log(toggleSign.innerText)
         if(toggleSign.innerText === 'SIGN IN') {
-            alert('Please Sign in to add items in cart');
+            alert('Please signin to add items in cart');
         }
         else{
             let item;
@@ -334,12 +348,25 @@ class UI {
         this.cartTotal();
     }
     cartItemCount() {
-        const items = data.localStorageGetItems();
-        this.itemCount.innerText = items.reduce( (acc,item) => acc+item.quantity  ,0);
+        if(toggleSign.innerText === 'SIGN IN') {
+            this.itemCount.innerText = 0;
+        }
+        else {
+            const items = data.localStorageGetItems();
+            this.itemCount.innerText = items.reduce( (acc,item) => acc+item.quantity  ,0);
+        }
+        
     }
     cartTotal() {
-        const items = data.localStorageGetItems();
-        const total = items.reduce( (acc,item) => acc+(item.quantity*item.price)  ,0);
+        let total;
+        if(toggleSign.innerText === 'SIGN IN') {
+            total = 0;
+        }
+        else{
+            const items = data.localStorageGetItems();
+            total = items.reduce( (acc,item) => acc+(item.quantity*item.price)  ,0);  
+        }
+        
         if(this.totalAmount)
         this.totalAmount.innerText = total;
     }

@@ -220,42 +220,7 @@ a {
         opacity: 0.7; }
 
 #contact {
-  background-color: darkgrey;
   padding: 20px; }
-  #contact .contact-heading {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 35px; }
-  #contact .contact-content {
-    display: grid;
-    grid-template-areas: 'name email' 'subject phone' 'message message' 'button button';
-    padding: 0 30px;
-    grid-gap: 30px;
-    font-size: 20px; }
-    #contact .contact-content .name {
-      grid-area: name;
-      height: 40px;
-      padding: 10px; }
-    #contact .contact-content .email {
-      grid-area: email;
-      height: 40px;
-      padding: 10px; }
-    #contact .contact-content .subject {
-      grid-area: subject;
-      height: 40px;
-      padding: 10px; }
-    #contact .contact-content .phone {
-      grid-area: phone;
-      height: 40px;
-      padding: 10px; }
-    #contact .contact-content .message {
-      grid-area: message;
-      height: 150px;
-      padding: 10px; }
-    #contact .contact-content .button {
-      grid-area: button;
-      width: 70%;
-      margin: 10px auto; }
 
 .checkout-page {
   width: 55%;
@@ -303,6 +268,11 @@ a {
     margin-top: 30px;
     margin-left: auto;
     font-size: 36px; }
+  .checkout-page .test-warning {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 24px;
+    color: red; }
 
 #sign-in .box {
   max-width: 450px;
@@ -323,6 +293,12 @@ a {
     height: 40px;
     border-radius: 5px;
     margin-bottom: 20px; }
+  #sign-in .box .sign-in-form .message {
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    border-radius: 5px; }
   #sign-in .box .sign-in-form .form-btn {
     display: flex;
     justify-content: space-between; }

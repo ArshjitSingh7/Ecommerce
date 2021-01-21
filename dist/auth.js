@@ -61,8 +61,9 @@ auth.onAuthStateChanged( user => {
         document.querySelector('.toggle-sign').innerText = 'SIGN OUT';
     }
     else {
-        // window.location.assign('./signin.html');
-        console.log('hello');
         document.querySelector('.toggle-sign').innerText = 'SIGN IN'
     }
+    ui.displayCartItems();
+    ui.displayCheckoutPage();
+    ui.cartItemCount();
 })
