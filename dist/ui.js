@@ -52,7 +52,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}">Add To Cart</button>
             </div>
@@ -67,7 +67,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}">Add To Cart</button>
             </div>
@@ -82,7 +82,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}" >Add To Cart</button>
             </div>
@@ -97,7 +97,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}">Add To Cart</button>
             </div>
@@ -112,7 +112,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}">Add To Cart</button>
             </div>
@@ -135,7 +135,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}">Add To Cart</button>
             </div>
@@ -150,7 +150,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}">Add To Cart</button>
             </div>
@@ -165,7 +165,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}">Add To Cart</button>
             </div>
@@ -180,7 +180,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}">Add To Cart</button>
             </div>
@@ -195,7 +195,7 @@ class UI {
                 <div class="image" style="background-image : url(${item.imageUrl});"></div>
                 <div class="collection-footer">
                     <span class="name">${item.name}</span>
-                    <span class="price">${item.price}</span>
+                    <span class="price">$${item.price}</span>
                 </div>
                 <button class="custom-button btn-grey cart-btn" id="${item.id}">Add To Cart</button>
             </div>
